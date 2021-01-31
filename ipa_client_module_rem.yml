@@ -1,0 +1,9 @@
+---
+- name: Playbook to unconfigure IPA clients
+  hosts: ipaclients
+  become: true
+
+  tasks:
+  - name: Unconfigure IPA client
+    ipaclient:
+      state: absent
