@@ -1,13 +1,10 @@
 ---
-- name: Create 2 Directories
+- name: Create Directories
   hosts: all
   tasks:
 
    - name: Creates directory
      file:
-       path: ~/demo_directory_created_through_awx
+       path: "{{file_path}}"
        state: directory
-   - name: Creates directory
-     file:
-       path: ~/another_demo_directory_created_through_awx
-       state: directory
+
