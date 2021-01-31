@@ -1,5 +1,6 @@
 ---
 - name: Register and auto-subscribe to available content.
+  hosts: all
   redhat_subscription:
     state: present
     username: mndambuki
