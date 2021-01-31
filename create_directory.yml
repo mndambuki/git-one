@@ -1,7 +1,7 @@
 ---
-- name: Register and auto-subscribe to available content.
-  hosts: all
-  redhat_subscription:
+
+- name: Register as user (joe_user) with password (somepass) and auto-subscribe to available content.
+  community.general.redhat_subscription:
     state: present
     username: mndambuki
     password: m2ryann3
