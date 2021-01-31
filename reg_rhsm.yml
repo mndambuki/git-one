@@ -1,7 +1,0 @@
----
-- name: Register and auto-subscribe to available content.
-  redhat_subscription:
-    state: present
-    username: mndambuki
-    password: m2ryann3
-    auto_attach: true
