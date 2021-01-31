@@ -1,0 +1,6 @@
+- name: Register as user mndambuki with password and auto-subscribe to available content.
+  community.general.redhat_subscription:
+    state: present
+    username: mndambuki
+    password: !QAZ2wsx
+    auto_attach: true
