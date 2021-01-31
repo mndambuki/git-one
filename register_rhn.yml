@@ -11,3 +11,4 @@
       state: present
       username: "mndambuki"
       password: m2ryann3
+      auto_attach: true
