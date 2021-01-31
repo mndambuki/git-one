@@ -1,3 +1,4 @@
+---
 - name: Register and auto-subscribe to available content.
   redhat_subscription:
     state: present
