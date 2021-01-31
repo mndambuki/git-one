@@ -1,13 +1,13 @@
 ---
-- name: Register Host to RHN
+- name: Create 2 Directories
   hosts: all
-  become: true
-  vars:
-    ansible_user: root
-
   tasks:
-  - name: Register host to RHN
-    redhat_subscription:
-      state: present
-      username: "mndambuki"
-      password: m2ryann3
+
+   - name: Creates directory
+     file:
+       path: ~/demo_directory_created_through_awx
+       state: directory
+   - name: Creates directory
+     file:
+       path: ~/another_demo_directory_created_through_awx
+       state: directory
