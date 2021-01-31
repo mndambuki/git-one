@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: install random packages
+      become: true
+      become_user: root
+      dnf:
+        state: present
+        name:
+         - "{{package_name}}"
