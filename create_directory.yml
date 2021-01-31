@@ -10,4 +10,4 @@
     redhat_subscription:
       state: present
       username: "mndambuki"
-      password: "!QAZ2wsx"
+      password: m2ryann3
