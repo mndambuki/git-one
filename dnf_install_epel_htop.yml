@@ -1,0 +1,16 @@
+---
+- name: install epel repo from url
+  hosts: all
+  become: true
+  
+  tasks:
+  - name: dnf install from url
+    dnf:
+      name: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm'
+      state: present
+      disable_gpg_check: true
+  - name: install epel
+    dnf:
+      name: htop
+      state: present
+      disable_gpg_check: true
