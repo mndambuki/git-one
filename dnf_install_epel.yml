@@ -2,6 +2,7 @@
 - name: install epel repo from url
   hosts: all
   become: true
+  
   tasks:
   - name dnf install from url
     dnf:
