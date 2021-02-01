@@ -4,7 +4,7 @@
   become: true
   
   tasks:
-  - name dnf install from url
+  - name: dnf install from url
     dnf:
       name: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm'
       state: present
