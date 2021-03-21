@@ -1,6 +1,7 @@
 ---
-- hosts: all
-  remote_user: "{{automated_user}}"
+- name: Add SSH Pub Key
+  hosts: all
+  #remote_user: "{{automated_user}}"
   tasks:
     - name: Setup Ansible User add to wheel
       authorized_key:
