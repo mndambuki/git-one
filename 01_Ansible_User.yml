@@ -40,7 +40,7 @@
       lineinfile: dest=/etc/ssh/sshd_config regexp="^PubkeyAuthentication" line="PubkeyAuthentication yes" state=present
       notify: Restart ssh
  
-     - name: Disallow empty password authentication
+    - name: Disallow empty password authentication
       lineinfile: dest=/etc/ssh/sshd_config regexp="^PermitEmptyPasswords" line="PermitEmptyPasswords no" state=present
       notify: Restart ssh
   
