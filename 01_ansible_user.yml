@@ -5,9 +5,9 @@
   
     - name: Setup Ansible User add to wheel
       user:
-      name: "{{ansible_user}}"
-      comment: Ansible Management User
-      group: wheel
+        name: "{{ansible_user}}"
+        comment: Ansible Management User
+        group: wheel
     
     - name: Set includedir in sudoers
       lineinfile:
