@@ -14,7 +14,7 @@
        
     - name: Creating a file with content
       copy:
-      dest: "{{folder_path}}/{{file_path2}}"
-      content: |
-        line 01
-        line 02
+        dest: "{{folder_path}}/{{file_path2}}"
+        content: |
+          line 01
+          line 02
