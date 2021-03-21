@@ -18,3 +18,8 @@
         content: |
           line 01
           line 02
+          
+    - name: Ensure SELinux is set to enforcing mode
+      path: /etc/selinux/config
+      regexp: '^SELINUX='
+      line: SELINUX=permissive
