@@ -4,11 +4,10 @@
   gather_facts: False
   tasks:
   
-    - name: Setup Ansible User add to wheel
+    - name: Create User {{ automated_user }} and Add to Wheel Group
       user:
         name: "{{automated_user}}"
         comment: Ansible Management User
-        group: wheel
     
     - name: Set includedir in Sudoers File
       lineinfile:
