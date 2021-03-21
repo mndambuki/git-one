@@ -51,6 +51,6 @@
   handlers:
     - name: Restart ssh
       systemd: 
-        name: ssh 
+        name: sshd
         state: restarted
       
