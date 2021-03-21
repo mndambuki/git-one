@@ -49,7 +49,7 @@
       notify: Restart ssh
 
   handlers:
-    - name: Restart SSH Servers
+    - name: Restart ssh
       systemd: 
         name: ssh 
         state: restarted
