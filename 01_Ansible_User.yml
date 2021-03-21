@@ -31,3 +31,26 @@
         state: present
         manage_dir: yes
         key: https://gist.githubusercontent.com/mndambuki/af1902b38a17446e11e1125020e2c29d/raw/a5c932d2d5e2ed3afa1699736a87005df70b447a/id_rsa.pub
+
+    - name: Disallow password authentication
+      lineinfile: dest=/etc/ssh/sshd_config regexp="^PasswordAuthentication" line="PasswordAuthentication no" state=present
+      notify: Restart ssh
+ 
+    - name: Allow public Key authentication
+      lineinfile: dest=/etc/ssh/sshd_config regexp="^PubkeyAuthentication" line="PubkeyAuthentication yes" state=present
+      notify: Restart ssh
+ 
+     - name: Disallow empty password authentication
+      lineinfile: dest=/etc/ssh/sshd_config regexp="^PermitEmptyPasswords" line="PermitEmptyPasswords no" state=present
+      notify: Restart ssh
+  
+    - name: Disallow root SSH access
+      lineinfile: dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin no" state=present
+      notify: Restart ssh
+
+  handlers:
+    - name: Restart SSH Servers
+      systemd: 
+        name: ssh 
+        state: restarted
+      
