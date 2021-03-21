@@ -16,7 +16,7 @@
         state: present
         validate: "/usr/sbin/visudo -cf %s"
     
-    - name: Add user "ansibleuser" to sudo
+    - name: Add user "{{automated_user}}" to sudo
       lineinfile:
         path: "/etc/sudoers.d/{{automated_user}}"
         line: '{{automated_user}} ALL=(ALL) NOPASSWD: ALL'
