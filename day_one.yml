@@ -20,6 +20,7 @@
           line 02
           
     - name: Ensure SELinux is set to enforcing mode
-      path: /etc/selinux/config
-      regexp: '^SELINUX='
-      line: SELINUX=permissive
+      ansible.builtin.lineinfile:
+        path: /etc/selinux/config
+        regexp: '^SELINUX='
+        line: SELINUX=permissive
