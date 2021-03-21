@@ -2,6 +2,7 @@
 - name: Change root user password
   hosts: all
   gather_facts: False
+  become: yes
   tasks:
   
     - name: Change root password
