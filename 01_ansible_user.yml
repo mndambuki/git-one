@@ -2,6 +2,7 @@
 - name: Ansible User and Sudo
   hosts: all
   tasks:
+  
     - name: Setup Ansible User add to wheel
       user:
       name: "{{ansible_user}}"
