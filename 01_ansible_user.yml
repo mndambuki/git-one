@@ -12,7 +12,7 @@
     - name: Set includedir in sudoers
       lineinfile:
         dest: /etc/sudoers
-        line: "includedir /etc/sudoers.d"
+        line: "#includedir /etc/sudoers.d"
         state: present
         validate: "/usr/sbin/visudo -cf %s"
     
