@@ -26,7 +26,7 @@
         create: yes
         validate: '/usr/sbin/visudo -cf %s'
         
-    - name: Add "{{automated_user}}"'s Public key
+    - name: Add {{ automated_user }}'s Public key
       authorized_key:
         user: "{{automated_user}}"
         state: present
