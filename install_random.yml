@@ -1,9 +1,9 @@
 ---
 - hosts: all
+  become: true
+  gather_facts: False
   tasks:
     - name: install random packages
-      become: true
-      become_user: root
       dnf:
         state: present
         name:
