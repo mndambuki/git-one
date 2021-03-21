@@ -4,7 +4,7 @@
   tasks:
     - name: Setup Ansible User add to wheel
       user:
-      name: ansible
+      name: {{ansible_user}}
       comment: Ansible Management User
       group: wheel
     
@@ -17,8 +17,8 @@
     
     - name: Add user "ansibleuser" to sudo
       lineinfile:
-        path: /etc/sudoers.d/ansibleuser
-        line: 'ansibleuser ALL=(ALL) NOPASSWD: ALL'
+        path: /etc/sudoers.d/{{ansible_user}}
+        line: '{{ansible_user}} ALL=(ALL) NOPASSWD: ALL'
         state: present
         mode: 0440
         create: yes
