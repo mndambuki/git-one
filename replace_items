@@ -1,0 +1,68 @@
+Input.txt
+=========
+Hello,How are you?
+This line should be commented
+This line should be commented
+
+- hosts: all
+  tasks:
+  - name: Exampel of commenting a line in Ansible.
+    replace:
+      path: /Users/mndambuki/Documents/Ansible/Input.txt
+      regexp: 'This line should be'
+      replace: '#This line should be'
+
+Input.txt after execution
+=========================
+Hello,How are you?
+#This line should be commented
+#This line should be commented
+
+
+
+
+Input.txt
+---------
+Hello,How are you?
+The following are US based google servers
+127.0.0.1
+The following are UK based google servers
+127.0.0.1
+
+ hosts: all
+  tasks:
+  - name: Commenting a line using the regualr expressions in Ansible.
+    replace:
+      path: /Users/mndambuki/Documents/Ansible/Input.txt
+      regexp: '(.*google server.*)'
+      replace: '#\1'
+
+Input.txt after execution
+-------------------------
+Hello,How are you?
+#The following are US based google servers
+127.0.0.1
+#The following are UK based google servers
+127.0.0.1
+
+
+
+input.txt
+----------
+Hello,How are you?
+#Uncomment this line
+#Also, Uncomment this line
+
+- hosts: all
+  tasks:
+  - name: Ansible delete file glob
+    replace:
+      path: /Users/mdtutorials/Documents/Ansible/Input.txt
+      regexp: '^#(.*Uncomment this line.*)'
+      replace: '\1'
+
+input.txt after execution
+-------------------------
+Hello,How are you?
+Uncomment this line
+Also, Uncomment this line
