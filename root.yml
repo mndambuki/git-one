@@ -1,0 +1,8 @@
+---
+- name: Create Ansible User, add to Sudoers and upload Ssh Public Key
+  hosts: all
+  gather_facts: False
+  tasks:
+  
+    - name: Change root password
+      user: name=root password= "{{password_noma}}"
