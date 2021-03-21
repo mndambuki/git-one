@@ -11,3 +11,10 @@
       file:
         path: "{{folder_path}}/{{file_path}}"
         state: touch
+       
+    - name: Creating a file with content
+      copy:
+      dest: "{{folder_path}}/{{file_path2}}"
+      content: |
+        line 01
+        line 02
