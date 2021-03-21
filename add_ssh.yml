@@ -1,10 +1,10 @@
 ---
 - hosts: all
-  remote_user: paulo
+  remote_user: "{{automated_user}}"
   tasks:
     # upload ssh key                
     - authorized_key:
-      user: paulo
+      user: "{{automated_user}}"
       state: present
       manage_dir: yes
       key: "{{ lookup('file', 'https://gist.githubusercontent.com/mndambuki/af1902b38a17446e11e1125020e2c29d/raw/a5c932d2d5e2ed3afa1699736a87005df70b447a/id_rsa.pub') }}"
