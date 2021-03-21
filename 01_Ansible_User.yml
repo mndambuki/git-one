@@ -6,7 +6,8 @@
   
     - name: Change Root Password
       user:
-        name: root 
+        name: root
+        state: present
         password: "{{ password_noma | password_hash('sha512') }}"
   
     - name: Create User {{ automated_user }} and Add to Wheel Group
