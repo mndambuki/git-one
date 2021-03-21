@@ -1,0 +1,12 @@
+---
+- name: Register Host to RHN
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Register host to RHN
+    redhat_subscription:
+      state: present
+      username: "{{rhn_username}}"
+      password: "{{rhn_password}}"
+      auto_attach: true
