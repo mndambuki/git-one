@@ -1,8 +1,8 @@
 ---
-- name: Create Directories
+- name: Day One Playbook
   hosts: all
   tasks:
-    - name: Creates directory
+    - name: Creates Some Directory
       file:
         path: "{{folder_path}}"
         state: directory
@@ -23,4 +23,21 @@
       lineinfile:
         path: /etc/selinux/config
         regexp: '^SELINUX='
-        line: SELINUX=permissive
+        line: SELINUX=enforcing
+        
+    - name: Set includedir in sudoers
+      lineinfile:
+        dest: /etc/sudoers
+        line: "#includedir /etc/sudoers.d"
+        state: present
+        validate: "/usr/sbin/visudo -cf %s"
+    - name: Add user "ansibleuser" to sudo
+      lineinfile:
+        path: /etc/sudoers.d/ansibleuser
+        line: 'ansibleuser ALL=(ALL) NOPASSWD: ALL'
+        state: present
+        mode: 0440
+        create: yes
+        validate: 'visudo -cf %s'
+        
+        
