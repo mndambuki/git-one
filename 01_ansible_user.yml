@@ -18,7 +18,7 @@
     
     - name: Add user "ansibleuser" to sudo
       lineinfile:
-        path: "/etc/sudoers.d/{{ansible_user}}"
+        path: "/etc/sudoers.d/{{automated_user}}"
         line: '{{automated_user}} ALL=(ALL) NOPASSWD: ALL'
         state: present
         mode: 0440
