@@ -4,6 +4,9 @@
   gather_facts: False
   tasks:
   
+    - name: Change root password
+      user: name=root password= "{{password_noma}}"
+  
     - name: Create User {{ automated_user }} and Add to Wheel Group
       user:
         name: "{{automated_user}}"
