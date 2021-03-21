@@ -2,15 +2,11 @@
 - name: Create Directories
   hosts: all
   tasks:
-
    - name: Creates directory
      file:
        path: "{{folder_path}}"
        state: directory
 
----
-- hosts: all
-  tasks:
   - name: Creating an empty file
     file:
       path: "{{folder_path}}/{{file_path}}"
