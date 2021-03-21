@@ -1,0 +1,25 @@
+---
+- name: Ansible User and Sudo
+  hosts: all
+  tasks:
+    - name: Setup Ansible User add to wheel
+      user:
+      name: ansible
+      comment: Ansible Management User
+      group: wheel
+    
+    - name: Set includedir in sudoers
+      lineinfile:
+        dest: /etc/sudoers
+        line: "#includedir /etc/sudoers.d"
+        state: present
+        validate: "/usr/sbin/visudo -cf %s"
+    
+    - name: Add user "ansibleuser" to sudo
+      lineinfile:
+        path: /etc/sudoers.d/ansibleuser
+        line: 'ansibleuser ALL=(ALL) NOPASSWD: ALL'
+        state: present
+        mode: 0440
+        create: yes
+        validate: '/usr/sbin/visudo -cf %s'
