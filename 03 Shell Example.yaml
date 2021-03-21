@@ -1,0 +1,11 @@
+---
+- name: Shell Example Playbook
+  hosts: all
+  tasks:
+  
+    - name: Setup Ansible User add to wheel
+      user:
+      name: ansible
+      comment: Ansible Management User
+      group: wheel
+    
