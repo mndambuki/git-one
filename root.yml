@@ -7,4 +7,4 @@
     - name: Change root password
       user:
         name: root 
-        password: "{{password_noma}}"
+        password: "{{ password_noma | password_hash('sha512') }}"
