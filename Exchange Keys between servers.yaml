@@ -27,3 +27,4 @@
     - name: add the public key into Authorized_keys file to enable Key Auth
       shell: "cat /tmp/remote-id_rsa.pub >> ~/.ssh/authorized_keys"
       register: addtoauth
+
